@@ -117,7 +117,7 @@ export class TagInputDropdown implements AfterViewInit {
   /**
    * @name tagInput
    */
-  public tagInput: TagInputComponent = this.injector.get(TagInputComponent);
+  public tagInput: TagInputComponent;
 
   /**
    * @name _autocompleteItems
@@ -153,7 +153,9 @@ export class TagInputDropdown implements AfterViewInit {
     });
   }
 
-  constructor(private readonly injector: Injector) {}
+  constructor(private readonly injector: Injector) {
+    this.tagInput = this.injector.get(TagInputComponent);
+  }
 
   /**
    * @name ngAfterviewInit
